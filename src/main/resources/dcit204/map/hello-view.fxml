@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="dcit204.map.HelloController"
+            styleClass="root">
+
+    <!-- Top section with UG header -->
+    <top>
+        <VBox styleClass="header-section">
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+                <padding>
+                    <Insets top="10" right="20" bottom="10" left="20"/>
+                </padding>
+                <Label text="UNIVERSITY OF GHANA" styleClass="university-label"/>
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button text="≡" styleClass="menu-button"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Main content -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-area">
+            <VBox spacing="20" styleClass="main-content">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" styleClass="title-bar">
+                    <Label text="UG Campus Route Finder" styleClass="content-title"/>
+                </HBox>
+
+                <TitledPane text="Route Search" expanded="true" styleClass="route-search-pane">
+                    <VBox spacing="15">
+                        <HBox spacing="15" alignment="CENTER_LEFT">
+                            <Label text="From:" styleClass="form-label"/>
+                            <ComboBox fx:id="startLocationComboBox" promptText="Type or select starting location" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                        </HBox>
+
+                        <HBox spacing="15" alignment="CENTER_LEFT">
+                            <Label text="To:" styleClass="form-label"/>
+                            <ComboBox fx:id="destinationComboBox" promptText="Type or select destination" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                        </HBox>
+
+                        <HBox spacing="15" alignment="CENTER_LEFT">
+                            <CheckBox fx:id="useLandmarkCheckBox" text="Include specific landmarks" styleClass="form-checkbox"/>
+                        </HBox>
+
+                        <HBox fx:id="landmarkSelectionBox" spacing="15" alignment="TOP_LEFT">
+                            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                                <Label text="Select landmarks to include:" styleClass="form-label"/>
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <ComboBox fx:id="landmarkComboBox" promptText="Type or choose landmark" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                    <Button fx:id="addLandmarkButton" text="Add" styleClass="small-button"/>
+                                </HBox>
+                                <ListView fx:id="selectedLandmarksListView" prefHeight="100" VBox.vgrow="ALWAYS"/>
+                                <Button fx:id="removeLandmarkButton" text="Remove Selected Landmark" styleClass="small-button"/>
+                            </VBox>
+                        </HBox>
+
+                        <HBox spacing="15" alignment="CENTER_LEFT">
+                            <Label text="Route Criteria:" styleClass="form-label"/>
+                            <RadioButton fx:id="shortestDistanceRadio" text="Shortest Distance"/>
+                            <RadioButton fx:id="optimalTimeRadio" text="Optimal Time"/>
+                        </HBox>
+
+                        <HBox spacing="15" alignment="CENTER">
+                            <Button fx:id="findRouteButton" text="Find Routes" styleClass="primary-button"/>
+                        </HBox>
+
+                        <Label fx:id="statusLabel" text="Select locations to get started" styleClass="status-label"/>
+                    </VBox>
+                </TitledPane>
+
+                <HBox spacing="20" VBox.vgrow="ALWAYS">
+                    <VBox spacing="15" HBox.hgrow="ALWAYS" styleClass="routes-container" minWidth="300">
+                        <Label text="Routes" styleClass="section-header"/>
+                        <VBox fx:id="routeDetailsBox" spacing="10" VBox.vgrow="ALWAYS" styleClass="route-details">
+                            <Label text="Select locations to see available routes" />
+                        </VBox>
+                    </VBox>
+
+                    <WebView fx:id="mapWebView" HBox.hgrow="ALWAYS" minWidth="400" minHeight="400"/>
+                </HBox>
+
+                <VBox fx:id="landmarkRoutesBox" spacing="10" styleClass="landmark-routes" visible="false" managed="false">
+                    <Label text="No landmark routes selected" />
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

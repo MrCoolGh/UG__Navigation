@@ -1,0 +1,124 @@
+{
+  "locations": [
+    "Main Gate",
+    "Commonwealth Hall",
+    "Legon Hall",
+    "Akuafo Hall",
+    "Balme Library",
+    "JQB Building",
+    "Mathematics Department",
+    "Computer Science Department",
+    "School of Engineering",
+    "Business School",
+    "UGCS Bank",
+    "Great Hall",
+    "Athletic Oval",
+    "Legon Night Market",
+    "Diaspora",
+    "International Students Hostel",
+    "Valco Trust Hostel",
+    "TF Hostel"
+  ],
+  "landmarks": [
+    "Balme Library",
+    "Great Hall",
+    "UGCS Bank",
+    "Legon Night Market",
+    "JQB Building",
+    "Athletic Oval",
+    "Commonwealth Hall",
+    "Business School"
+  ],
+  "graph": {
+    "Main Gate": {
+      "Great Hall": 400.0,
+      "UGCS Bank": 600.0
+    },
+    "Great Hall": {
+      "Main Gate": 400.0,
+      "Commonwealth Hall": 300.0,
+      "Business School": 500.0
+    },
+    "Commonwealth Hall": {
+      "Great Hall": 300.0,
+      "Legon Hall": 250.0,
+      "Balme Library": 400.0,
+      "Athletic Oval": 350.0
+    },
+    "Legon Hall": {
+      "Commonwealth Hall": 250.0,
+      "Akuafo Hall": 200.0,
+      "Night Market": 450.0
+    },
+    "Akuafo Hall": {
+      "Legon Hall": 200.0,
+      "Balme Library": 350.0,
+      "Night Market": 300.0
+    },
+    "Balme Library": {
+      "Commonwealth Hall": 400.0,
+      "Akuafo Hall": 350.0,
+      "JQB Building": 200.0,
+      "Mathematics Department": 250.0
+    },
+    "JQB Building": {
+      "Balme Library": 200.0,
+      "Mathematics Department": 150.0,
+      "Computer Science Department": 200.0
+    },
+    "Mathematics Department": {
+      "Balme Library": 250.0,
+      "JQB Building": 150.0,
+      "Computer Science Department": 150.0,
+      "School of Engineering": 300.0
+    },
+    "Computer Science Department": {
+      "JQB Building": 200.0,
+      "Mathematics Department": 150.0,
+      "School of Engineering": 200.0
+    },
+    "School of Engineering": {
+      "Mathematics Department": 300.0,
+      "Computer Science Department": 200.0,
+      "Business School": 400.0
+    },
+    "Business School": {
+      "Great Hall": 500.0,
+      "School of Engineering": 400.0,
+      "UGCS Bank": 250.0
+    },
+    "UGCS Bank": {
+      "Main Gate": 600.0,
+      "Business School": 250.0
+    },
+    "Athletic Oval": {
+      "Commonwealth Hall": 350.0,
+      "Night Market": 500.0,
+      "Diaspora": 550.0
+    },
+    "Night Market": {
+      "Legon Hall": 450.0,
+      "Akuafo Hall": 300.0,
+      "Athletic Oval": 500.0,
+      "Diaspora": 400.0
+    },
+    "Diaspora": {
+      "Athletic Oval": 550.0,
+      " Legon Night Market": 400.0,
+      "International Students Hostel": 300.0,
+      "TF Hostel": 450.0
+    },
+    "International Students Hostel": {
+      "Diaspora": 300.0,
+      "Valco Trust Hostel": 400.0
+    },
+    "Valco Trust Hostel": {
+      "International Students Hostel": 400.0,
+      "TF Hostel": 300.0
+    },
+    "TF Hostel": {
+      "Diaspora": 450.0,
+      "Valco Trust Hostel": 300.0
+    }
+  }
+}
